@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>银光标注版：疫苗不平等语篇（原文+高亮）</title>
+<style>
+
+:root{
+  --bg:#0b0e14;
+  --card:#11151c;
+  --text:#e6e6e6;
+  --muted:#9aa4b2;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.header{padding:20px 24px;border-bottom:1px solid #222}
+h1{margin:0 0 6px 0;font-size:22px}
+.sub{color:var(--muted);font-size:14px}
+.container{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px}
+.card{background:var(--card);border:1px solid #222;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden}
+.card h2{margin:0;padding:14px 16px;border-bottom:1px solid #222;background:rgba(255,255,255,.02);font-size:16px}
+.card .content{padding:16px;white-space:pre-wrap}
+.legend{display:flex;flex-wrap:wrap;gap:10px;padding:12px 16px;border-bottom:1px solid #222;background:rgba(255,255,255,.02)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid #222;background:#0f131a;font-size:12px;cursor:pointer}
+.badge input{accent-color:#fff}
+.color-chip{width:14px;height:14px;border-radius:4px;box-shadow:inset 0 0 1px rgba(0,0,0,.6), 0 0 6px rgba(255,255,255,.15)}
+.hl{padding:1px 3px;border-radius:6px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.25);}
+/* Set colors per class */
+.vacc{background:#fff59d;color:#111}
+.pop{background:#b3e5fc;color:#111}
+.disease{background:#f8bbd0;color:#111}
+.access{background:#c8e6c9;color:#111}
+.work{background:#ffe0b2;color:#111}
+.research{background:#d1c4e9;color:#111}
+.compare{background:#eeeeee;color:#111}
+
+/* Toggle visibility classes */
+.hide-vacc .vacc{background:transparent;color:inherit;box-shadow:none}
+.hide-pop .pop{background:transparent;color:inherit;box-shadow:none}
+.hide-disease .disease{background:transparent;color:inherit;box-shadow:none}
+.hide-access .access{background:transparent;color:inherit;box-shadow:none}
+.hide-work .work{background:transparent;color:inherit;box-shadow:none}
+.hide-research .research{background:transparent;color:inherit;box-shadow:none}
+.hide-compare .compare{background:transparent;color:inherit;box-shadow:none}
+
+.controls{display:flex;gap:10px;flex-wrap:wrap;padding:10px 16px}
+button{padding:8px 10px;border-radius:10px;border:1px solid #333;background:#18202c;color:#e6e6e6;cursor:pointer}
+button:hover{filter:brightness(1.1)}
+
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>银光标注版（原文 + 高亮）</h1>
+    <div class="sub">不同颜色代表不同词汇集（lexical sets）。可用下方开关隐藏/显示。</div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>原文（未标注）</h2>
+      <div class="content">According to the Center for Disease Control’s Advisory Committee on Immunization Practices, vaccination is one of the safest and most recommended preventive care measures available to preserve health among both, children and adults. Immunizations are an essential component of preventive medicine. Access to vaccines, however, varies across the U.S. population. For instance, there is an abundance of research and data suggesting that Hispanic groups have the lowest rates of vaccination compared to most other race/ethnic groups residing in the United States. The U.S. Department of Health and Human Services Office of Minority Health reported that Hispanic adults were 30% less likely to have received influenza flu shot, hepatitis, or pneumonia vaccinations compared to non-Hispanic whites within the last 12 months. 
+
+Disparities in vaccination rates are even greater among Mexican migrant populations for measles, flu, and pertussis (BPT). A 2014 study concluded that Mexican immigrants are highly underserved and the type of work they do (mostly construction, agriculture, services) places this group at the greatest risk for infectious diseases. The study found that, less than one-fifth of mobile Mexican migrants received an influenza vaccination in the previous year. This is a substantially low rate compared to the overall rates found among adults living in the United States (42%) and Mexico (44%). A 2015 study conducted by the American Public Health Association found evidence supporting similar findings: that is, when compared with other ethnic groups (non-Hispanic Whites, Asians, and Blacks), Hispanics had the lowest vaccination coverage for influenza and pneumococcus. 
+
+Similarly, access to affordable health care is more difficult for immigrants, especially if they are undocumented. Due to the nature of their jobs (high risk), the context of poverty in which they live, and the low wages they receive, males are at greater risk for communicable diseases and work-related injuries. Furthermore, preventive medicine information is less available to limited English speaking immigrants, especially men. 
+
+Adult immunization practices are a topic that in spite of its importance have not received sufficient and systematized attention from public health researchers and health officials. For instance, there is a scarcity of literature reporting specifically on vaccination practices by gender and ethnic differences. Although it is known that lower class individuals and adult males in general of all racial/ethnic groups receive less preventive health care than higher SES males, so in this regard Mexican-origin males may not be too different from other males regardless of race or ethnic origin. 
+
+The barriers for vaccination access among minority group males are complex and strongly related to traditional gender roles. Some of the reasons adult patients do not receive vaccines, as reported by clinicians, include resistance due to cost, needle opposition -“If I don’t have to get the shot [for work] then I don’t want it”-, unwillingness to miss work, pain avoidance, and lack of knowledge about adult vaccines. Additionally, clinicians mentioned more hesitance coming from male adult Hispanic patients than from other groups. In general, the health system seems to exclude males as there is a significant focus on immunizations for pregnant women and their newborn children. Further, the lack of knowledge or misinformation parents hold regarding vaccines not only affects their own heath, but it can also turn into a barrier that prevents children from receiving vaccination.
+</div>
+    </div>
+    <div class="card" id="highlight-card">
+      <h2>银光标注（可筛选）</h2>
+      <div class="legend">
+        
+<label class="badge">
+  <input type="checkbox" id="toggle-vacc" checked onchange="toggleSet('vacc', this.checked)"/>
+  <span class="color-chip" style="background:#fff59d"></span>
+  <span>疫苗/免疫（Vaccination &amp; Immunization）</span>
+</label>
+
+
+<label class="badge">
+  <input type="checkbox" id="toggle-pop" checked onchange="toggleSet('pop', this.checked)"/>
+  <span class="color-chip" style="background:#b3e5fc"></span>
+  <span>人群/身份（Population &amp; Demographics）</span>
+</label>
+
+
+<label class="badge">
+  <input type="checkbox" id="toggle-disease" checked onchange="toggleSet('disease', this.checked)"/>
+  <span class="color-chip" style="background:#f8bbd0"></span>
+  <span>疾病（Disease Examples）</span>
+</label>
+
+
+<label class="badge">
+  <input type="checkbox" id="toggle-access" checked onchange="toggleSet('access', this.checked)"/>
+  <span class="color-chip" style="background:#c8e6c9"></span>
+  <span>获取/障碍（Access &amp; Barriers &amp; Info）</span>
+</label>
+
+
+<label class="badge">
+  <input type="checkbox" id="toggle-work" checked onchange="toggleSet('work', this.checked)"/>
+  <span class="color-chip" style="background:#ffe0b2"></span>
+  <span>职业/社会经济（Occupation &amp; SES）</span>
+</label>
+
+
+<label class="badge">
+  <input type="checkbox" id="toggle-research" checked onchange="toggleSet('research', this.checked)"/>
+  <span class="color-chip" style="background:#d1c4e9"></span>
+  <span>研究/证据（Research &amp; Institutions）</span>
+</label>
+
+
+<label class="badge">
+  <input type="checkbox" id="toggle-compare" checked onchange="toggleSet('compare', this.checked)"/>
+  <span class="color-chip" style="background:#eeeeee"></span>
+  <span>比较/覆盖（Rates &amp; Comparisons）</span>
+</label>
+
+      </div>
+      <div class="controls">
+        <button onclick="setAll(true)">全选</button>
+        <button onclick="setAll(false)">全不选</button>
+      </div>
+      <div class="content" id="highlighted">
+According to the <span class="hl research">Center for Disease Control’s Advisory Committee on Immunization Practices</span>, <span class="hl vacc">vaccination</span> is one of the safest and most recommended <span class="hl vacc">preventive care</span> measures available to preserve health among both, <span class="hl pop">children</span> and <span class="hl pop">adults</span>. <span class="hl vacc">Immunizations</span> are an essential component of <span class="hl vacc">preventive medicine</span>. <span class="hl access">Access</span> to <span class="hl vacc">vaccines</span>, however, varies across the U.S. population. For instance, there is an abundance of <span class="hl research">research</span> and <span class="hl research">data</span> suggesting that <span class="hl pop">Hispanic groups</span> have the <span class="hl compare">lowest rates</span> of <span class="hl vacc">vaccination</span> <span class="hl compare">compared</span> to most other race/ethnic groups residing in the <span class="hl compare">United States</span>. The <span class="hl research">U.S. Department of Health and Human Services</span> <span class="hl research">Office of Minority Health</span> reported that <span class="hl pop">Hispanic adults</span> were <span class="hl compare">30%</span> less likely to have received <span class="hl disease">influenza</span> <span class="hl disease">flu shot</span>, <span class="hl disease">hepatitis</span>, or <span class="hl disease">pneumonia</span> <span class="hl vacc">vaccinations</span> <span class="hl compare">compared</span> to <span class="hl pop">non-Hispanic whites</span> within the <span class="hl compare">last 12 months</span>. 
+
+Disparities in <span class="hl vacc">vaccination rates</span> are even greater among <span class="hl pop">Mexican</span> migrant populations for <span class="hl disease">measles</span>, <span class="hl disease">flu</span>, and <span class="hl disease">pertussis</span> (BPT). A 2014 <span class="hl research">study</span> concluded that <span class="hl pop">Mexican immigrants</span> are highly underserved and the type of <span class="hl work">work</span> they do (mostly <span class="hl work">construction</span>, <span class="hl work">agriculture</span>, <span class="hl work">services</span>) places this group at the greatest risk for <span class="hl disease">infectious diseases</span>. The <span class="hl research">study</span> found that, less than one-fifth of mobile <span class="hl pop">Mexican migrants</span> received an <span class="hl disease">influenza</span> <span class="hl vacc">vaccination</span> in the <span class="hl compare">previous year</span>. This is a substantially low rate <span class="hl compare">compared</span> to the overall <span class="hl compare">rates</span> found among <span class="hl pop">adults</span> living in the <span class="hl compare">United States</span> (<span class="hl compare">42%</span>) and <span class="hl compare">Mexico</span> (<span class="hl compare">44%</span>). A 2015 <span class="hl research">study</span> conducted by the <span class="hl research">American Public Health Association</span> found evidence supporting similar findings: that is, when <span class="hl compare">compared</span> with other ethnic groups (<span class="hl pop">non-Hispanic Whites</span>, <span class="hl pop">Asians</span>, and <span class="hl pop">Blacks</span>), <span class="hl pop">Hispanics</span> had the lowest <span class="hl vacc">vaccination coverage</span> for <span class="hl disease">influenza</span> and <span class="hl disease">pneumococcus</span>. 
+
+Similarly, <span class="hl access">access</span> to <span class="hl access">affordable health care</span> is more difficult for <span class="hl pop">immigrants</span>, especially if they are <span class="hl work">undocumented</span>. Due to the nature of their <span class="hl work">jobs</span> (<span class="hl work">high risk</span>), the context of <span class="hl work">poverty</span> in which they live, and the <span class="hl work">low wages</span> they receive, <span class="hl pop">males</span> are at greater risk for <span class="hl disease">communicable diseases</span> and <span class="hl work">work-related injuries</span>. Furthermore, <span class="hl vacc">preventive medicine</span> information is less available to <span class="hl access">limited English</span> speaking <span class="hl pop">immigrants</span>, especially <span class="hl pop">men</span>. 
+
+<span class="hl pop">Adult</span> <span class="hl vacc">immunization practices</span> are a topic that in spite of its importance have not received sufficient and systematized attention from <span class="hl research">public health researchers</span> and <span class="hl research">health officials</span>. For instance, there is a scarcity of <span class="hl research">literature</span> reporting specifically on <span class="hl vacc">vaccination</span> practices by gender and ethnic differences. Although it is known that lower class individuals and <span class="hl pop">adult males</span> in general of all racial/ethnic groups receive less preventive health care than higher SES <span class="hl pop">males</span>, so in this regard <span class="hl pop">Mexican-origin males</span> may not be too different from other <span class="hl pop">males</span> regardless of race or ethnic origin. 
+
+The <span class="hl access">barriers</span> for <span class="hl vacc">vaccination</span> <span class="hl access">access</span> among <span class="hl pop">minority group males</span> are complex and strongly related to traditional gender roles. Some of the reasons <span class="hl pop">adult</span> patients do not receive <span class="hl vacc">vaccines</span>, as reported by clinicians, include <span class="hl access">resistance</span> due to cost, <span class="hl access">needle opposition</span> -“If I don’t have to get the shot [for <span class="hl work">work</span>] then I don’t want it”-, <span class="hl access">unwillingness to miss work</span>, <span class="hl access">pain avoidance</span>, and <span class="hl access">lack of knowledge</span> about <span class="hl pop">adult</span> <span class="hl vacc">vaccines</span>. Additionally, clinicians mentioned more <span class="hl access">hesitance</span> coming from male <span class="hl pop">adult</span> <span class="hl pop">Hispanic</span> patients than from other groups. In general, the health system seems to <span class="hl access">exclude males</span> as there is a significant <span class="hl access">focus on immunizations</span> for pregnant women and their <span class="hl pop">newborn children</span>. Further, the <span class="hl access">lack of knowledge</span> or <span class="hl access">misinformation</span> <span class="hl pop">parents</span> hold regarding <span class="hl vacc">vaccines</span> not only affects their own heath, but it can also turn into a <span class="hl access">barrier</span> that prevents <span class="hl pop">children</span> from receiving <span class="hl vacc">vaccination</span>.
+
+      </div>
+    </div>
+  </div>
+
+<script>
+const rootCard = document.getElementById('highlight-card');
+
+function toggleSet(key, on) {
+  rootCard.classList.toggle('hide-' + key, !on);
+}
+
+function setAll(on) {
+  document.getElementById('toggle-vacc').checked = on, document.getElementById('toggle-pop').checked = on, document.getElementById('toggle-disease').checked = on, document.getElementById('toggle-access').checked = on, document.getElementById('toggle-work').checked = on, document.getElementById('toggle-research').checked = on, document.getElementById('toggle-compare').checked = on;
+  Object.keys(sets).forEach(k => rootCard.classList.toggle('hide-' + k, !on));
+}
+
+const sets = {
+  'vacc': true, 'pop': true, 'disease': true, 'access': true, 'work': true, 'research': true, 'compare': true
+};
+
+// Initialize (all on)
+Object.keys(sets).forEach(k => rootCard.classList.remove('hide-' + k));
+</script>
+</body>
+</html>
